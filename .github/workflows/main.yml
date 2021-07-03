@@ -35,6 +35,6 @@ jobs:
           file: ./src/Dockerfile
           push: true
           tags: 
-            jchilela/python-docker:v1
-            jchilela/python-docker:${{github.run_number}}
+            jchilela/cassandraapi:latest
+            jchilela/cassandraapi:${{github.run_number}}
 
