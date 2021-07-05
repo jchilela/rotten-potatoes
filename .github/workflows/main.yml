@@ -34,7 +34,18 @@ jobs:
           context: ./src
           file: ./src/Dockerfile
           push: true
-          tags: 
-            jchilela/cassandraapi:latest
-            jchilela/cassandraapi:${{github.run_number}}
-
+          tags: |
+            jchilela/rotten-potatoes:latest
+            jchilela/rotten-potatoes:v${{ github.run_number }}
+  CD:
+    runs-on: ubuntu-latest
+    needs: [CI]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Kubernetes set context
+        uses: Azure/k8s-set-context@v1.1
+        with:
+          method: kubeconfig
+          kubeconfig: ${{ secrets.K8S_CONFIG }}
+      
+  
