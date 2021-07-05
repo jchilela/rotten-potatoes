@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: movies
-          image: jchilela/rotten-potatoes:latest
+          image: jchilela/rotten-potatoes
           ports:
             - containerPort: 5000
           env:
