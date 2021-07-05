@@ -47,5 +47,16 @@ jobs:
         with:
           method: kubeconfig
           kubeconfig: ${{ secrets.K8S_CONFIG }}
-      
-  
+      - name: Deploy Mongo
+        uses: Azure/k8s-deploy@v1
+        with:
+          manifests: |
+            k8s/mongodb/deployment.yaml
+            k8s/mongodb/servie.yaml
+      - name: Deploy Web
+        uses: Azure/k8s-deploy@v1
+        with:
+          manifests: |
+            k8s/web/deployment.yaml
+         # Aqui estamos a mudar no github a versao da imagem a fazer o pull. Ja nao e a versao do yaml
+          images: jchilela/rotten-potatoes:v${{ github.run_number }}
