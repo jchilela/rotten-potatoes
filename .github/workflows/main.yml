@@ -36,5 +36,5 @@ jobs:
           push: true
           tags: 
             jchilela/rotten-potatoes:latest
-            jchilela/rotten-potatoes:${{ github.run_number }}
+            jchilela/rotten-potatoes:v${{ github.run_number }}
 
