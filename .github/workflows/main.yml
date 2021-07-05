@@ -35,6 +35,6 @@ jobs:
           file: ./src/Dockerfile
           push: true
           tags: 
-            jchilela/cassandraapi:latest
-            jchilela/cassandraapi:${{github.run_number}}
+            jchilela/rotten-potatoes:latest
+            jchilela/rotten-potatoes:${{ github.run_number }}
 
